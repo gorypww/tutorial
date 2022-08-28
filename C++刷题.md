@@ -140,3 +140,83 @@ if (top < stk.size() - 1) //出错
 ### [950. 按递增顺序显示卡牌](https://leetcode.cn/problems/reveal-cards-in-increasing-order/)
 
 [C++——deque_qw&jy的博客-CSDN博客_c++ deque](https://blog.csdn.net/qq_43448856/article/details/123009040)
+
+### [1425. 带限制的子序列和](https://leetcode.cn/problems/constrained-subsequence-sum/)
+
+如何想到如下方法的预定义动态规划呢。
+
+> 我们用 *f[i]* 表示在数组的前 *i* 个数中进行选择，并且恰好选择了第 *i* 个数，可以得到的最大和。
+
+## 串
+
+### [1455. 检查单词是否为句中其他单](https://leetcode.cn/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/)
+
+bool isPrefix(const string &sentence, int start, int end, const string &searchWord) {
+
+其中的const [(19条消息) c++ const 用法_coolwriter的博客-CSDN博客_c++ const](https://blog.csdn.net/coolwriter/article/details/100135873)
+
+[【C++】为什么要尽可能使用const?_人工智能博士的博客-CSDN博客_为什么要用const](https://blog.csdn.net/qq_15698613/article/details/85245248)
+
+### [1408. 数组中的字符串匹配](https://leetcode.cn/problems/string-matching-in-an-array/)
+
+words[j].find(words[i]) != string::npos
+
+```cpp
+int i,j = 0; //相当于声明了变量i,j 但只给j赋值0
+```
+
+### [剑指 Offer II 085. 生成匹配的括号](https://leetcode.cn/problems/IDBivT/)
+
+思路有点像 从枚举到隐枚举。
+
+用到了回溯算法。
+
+### [1769. 移动所有球到每个盒子所需](https://leetcode.cn/problems/minimum-number-of-operations-to-move-all-balls-to-each-box/)
+
+```cpp
+class Solution {
+public:
+    vector<int> minOperations(string boxes) {
+        vector<int> res(boxes.size(),0);
+        for (int i = 0; i < boxes.size(); i++){
+            for (int j = 0; j < boxes.size(); j++){
+                int dis = i-j>0?i-j:j-i;
+                res[j] += (int)(boxes[i]-48)*dis;
+            }
+        }
+        return res;
+    }
+};
+```
+
+$n^{2}$方法
+
+### 2194.Excel 表中某个范围内的单元格
+
+通过定义字符串方法将char转化为string：
+
+```cpp
+string cell(1, row);
+```
+
+### [1773. 统计匹配检索规则的物品数量](https://leetcode.cn/problems/count-items-matching-a-rule/)
+
+```cpp
+s = ruleKey=="name"? 2: ruleKey=="color";
+```
+
+一下子搞了两个三目运算，就很帅！
+
+### [2255. 统计是给定字符串前缀的字符](https://leetcode.cn/problems/count-prefixes-of-a-given-string/) & [2185. 统计包含给定前缀的字符串](https://leetcode.cn/problems/counting-words-with-a-given-prefix/)
+
+[C++之string的compare用法 - 程嘿嘿 - 博客园 (cnblogs.com)](https://www.cnblogs.com/cff2121/p/9989806.html)
+
+```cpp
+compare(int start,int end, compared_object)
+```
+
+### [1528. 重新排列字符串](https://leetcode.cn/problems/shuffle-string/)
+
+[C++ 中的Swap函数写法汇总_C 语言_脚本之家 (jb51.net)](https://www.jb51.net/article/181427.htm)
+
+``swap()``
