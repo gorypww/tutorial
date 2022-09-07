@@ -1,5 +1,9 @@
 # C++刷题
 
+[TOC]
+
+
+
 ## 链表
 
 ### [2181. 合并零之间的节点](https://leetcode.cn/problems/merge-nodes-in-between-zeros/)
@@ -220,3 +224,47 @@ compare(int start,int end, compared_object)
 [C++ 中的Swap函数写法汇总_C 语言_脚本之家 (jb51.net)](https://www.jb51.net/article/181427.htm)
 
 ``swap()``
+
+## 树
+
+### [剑指 Offer II 055. 二叉搜索树迭代器](https://leetcode.cn/problems/kTOapQ/)
+
+官方题解中第二种做法，通过栈实时进行迭代中序遍历。
+
+```cpp
+    int next() {  // 初始时 cur = root
+        while (cur != nullptr) {
+            stk.push(cur);
+            cur = cur->left;
+        }
+        cur = stk.top();
+        stk.pop();
+        int ret = cur->val;
+        cur = cur->right;
+        return ret;
+    }
+```
+
+
+
+```cpp
+        stack<int> s;
+        TreeNode* res = new TreeNode(nums[0]);
+        nums.erase(0,1);
+        
+        for (auto num:nums) {
+            if (num>res->val) {
+                res = new TreeNode(num, res, nullptr);
+            } else {
+                TreeNode* cur = res;
+                while (cur && num < cur->val){
+                    cur = cur->right;
+                }
+                res->left = new TreeNode(num, nullptr, cur);
+            }
+
+            
+        }
+    }
+```
+
