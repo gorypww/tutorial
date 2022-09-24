@@ -341,3 +341,89 @@ public:
 #### Dijkstra 算法中的小根堆
 
 [C++优先队列priority_queue详解_是一只派大鑫的博客-CSDN博客_c++ priority_queue](https://blog.csdn.net/weixin_44572229/article/details/121925067)
+
+
+
+## 查找 (二分查找)
+
+### [222. 完全二叉树的节点个数](https://leetcode.cn/problems/count-complete-tree-nodes/)
+
+迭代做法的时间复杂度和空间复杂度都为O(n)，可以通过二分查找的思想进行优化，涉及到以下知识点：
+
+#### 位运算
+
+[c++之位运算（详解，初学者绝对能看懂）_？！？？的博客-CSDN博客_c++位运算](https://blog.csdn.net/m0_64183293/article/details/122519405)
+
+### [349. 两个数组的交集](https://leetcode.cn/problems/intersection-of-two-arrays/)
+
+#### unordered_map & set
+
+[C++中的set、unordered_set、map、unordered_map详解以及如何选择_小居老师的博客-CSDN博客_unordered_map unordered_set](https://blog.csdn.net/weixin_52244492/article/details/124628733)
+
+### [731. 我的日程安排表 II](https://leetcode.cn/problems/my-calendar-ii/)
+
+#### map
+
+#### 线段树
+
+```cpp
+class MyCalendarTwo {
+public:
+    MyCalendarTwo() {
+
+    }
+
+    void update(int start, int end, int val, int l, int r, int idx) {
+        if (r < start || end < l) {   //
+            return;
+        } 
+        if (start <= l && r <= end) { // [start, end) 区间内的节点进行如下操作(更新最大值和最小值)
+            tree[idx].first += val; // val为1或-1，first为区间的最大值，second为区间的最小值
+            tree[idx].second += val;
+        } else { // 遍历或创造左右节点
+            int mid = (l + r) >> 1;
+            update(start, end, val, l, mid, 2 * idx);
+            update(start, end, val, mid + 1, r, 2 * idx + 1);
+            tree[idx].first = tree[idx].second + max(tree[2 * idx].first, tree[2 * idx + 1].first);
+        }
+    }
+
+    bool book(int start, int end) {            
+        update(start, end - 1, 1, 0, 1e9, 1);
+        if (tree[1].first > 2) {
+            update(start, end - 1, -1, 0, 1e9, 1);
+            return false;
+        }
+        return true;
+    }
+private:
+    unordered_map<int, pair<int, int>> tree;
+};
+
+```
+
+### [1011. 在 D 天内送达包裹的能力](https://leetcode.cn/problems/capacity-to-ship-packages-within-d-days/)
+
+#### 为什么会想到用二分搜索
+
+遇到这种让你找答案的，你不能通过表达式去求得结果，然后问题又具有单调性（重要，二分搜索必须具有单调性），这种问题一般是二分搜索去猜答案。
+
+#### 函数里面再写函数（没有找到规范语法）
+
+[c++ 函数内置函数的写法_yihuo524的博客-CSDN博客](https://blog.csdn.net/yihuo524/article/details/124650839)
+
+### [300. 最长递增子序列](https://leetcode.cn/problems/longest-increasing-subsequence/)
+
+两种解法，我觉得都是动态规划的思想
+
+#### 定义d*[*i*]为考虑前 i 个元素，以第 *i* 个数字结尾的最长上升子序列的长度
+
+#### 维护一个数组d*[*i*] ，表示长度为 i*i* 的最长上升子序列的末尾元素的最小值
+
+### [1170. 比较字符串最小字母出现频次](https://leetcode.cn/problems/compare-strings-by-frequency-of-the-smallest-character/)
+
+#### [（C++）upper_bound()和upper_bound()函数用法_Hunter Dreamer的博客-CSDN博客_upper_bound函数](https://blog.csdn.net/qq_41448334/article/details/123088225)
+
+
+
+## 查找（哈希表）
