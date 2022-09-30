@@ -394,7 +394,7 @@ public:
             update(start, end - 1, -1, 0, 1e9, 1);
             return false;
         }
-        return true;
+        return true;	
     }
 private:
     unordered_map<int, pair<int, int>> tree;
@@ -427,3 +427,49 @@ private:
 
 
 ## 查找（哈希表）
+
+### 
+
+#### C++ unordered_map和unordered_set的区别
+
+[C++ set与map、unordered_map、unordered_set与哈希表_普通网友的博客-CSDN博客_c++ set哈希表](https://blog.csdn.net/m0_67390963/article/details/124503599)
+
+### [1636. 按照频率将数组升序排序](https://leetcode.cn/problems/sort-array-by-increasing-frequency/)
+
+#### sort函数自定义
+
+[C++ Sort函数详解_zhangbw~的博客-CSDN博客_c++ sort](https://blog.csdn.net/VariatioZbw/article/details/125155432)
+
+#### lamba表达式代替
+
+[C++中的Lambda表达式_Monkey Ji的博客-CSDN博客_c++ lambda 表达式](https://blog.csdn.net/Appleeatingboy/article/details/121676559)
+
+其中 **capture list** = [&] 表示以引用方式捕获块外的所有变量。
+
+
+
+## 排序
+
+### [1561. 你可以获得的最大硬币数目](https://leetcode.cn/problems/maximum-number-of-coins-you-can-get/)
+
+```cpp
+class Solution {
+public:
+    int maxCoins(vector<int>& piles) {
+        sort(piles.begin(), piles.end());
+        int ans = 0;
+        for (int i = piles.size()-2; i>= (int)piles.size()/3; i = i-2) {
+            ans += piles[i];
+        }
+        return ans;
+    }
+};
+```
+
+为什么循环里判断条件如果没有 `(int)`就会出错？
+
+### [451. 根据字符出现频率排序](https://leetcode.cn/problems/sort-characters-by-frequency/)
+
+#### 桶排序
+
+[基数排序、桶排序和计数排序的区别_LTELTY的博客-CSDN博客_桶排序和基数排序的区别](https://blog.csdn.net/qq_25026989/article/details/89367954)
