@@ -473,3 +473,23 @@ public:
 #### 桶排序
 
 [基数排序、桶排序和计数排序的区别_LTELTY的博客-CSDN博客_桶排序和基数排序的区别](https://blog.csdn.net/qq_25026989/article/details/89367954)
+
+### [剑指 Offer II 076. 数组中的第 k 大的](https://leetcode.cn/problems/xx4gT2/)
+
+#### 快速排序
+
+### [389. 找不同](https://leetcode.cn/problems/find-the-difference/)
+
+#### 异或计算
+
+异或运算的特性：
+
+1.异或自己得0，任何数异或0得自己本身；
+2.具有交换律、结合律，例如 1^2^3^4^2^3^1 = (1^1)^(2^2)^(3^3)^4 = 0^0^0^4 = 0^4 = 4;
+总结：异或运算擅长找不同。
+
+### [169. 多数元素](https://leetcode.cn/problems/majority-element/)
+
+#### Boyer-Moore 投票算法
+
+[多数投票算法——Boyer–Moore majority vote algorithm - lkltcl - 博客园 (cnblogs.com)](https://www.cnblogs.com/lkltcl/p/15378722.html)
