@@ -2,6 +2,34 @@
 
 [TOC]
 
+## 每日一题
+
+### [790. 多米诺和托米诺平铺](https://leetcode.cn/problems/domino-and-tromino-tiling/) （动态规划 / 思维+找规律）
+
+#### 动态规划
+
+``考虑这么一种平铺的方式：在第 *i* 列前面的正方形都被瓷砖覆盖，在第 *i* 列后面的正方形都没有被瓷砖覆盖（*i*从 11 开始计数）。``这种定义方式比较不容易想到。想到之后可以O(n, n)内解决。
+
+#### 思维
+
+怎么样找到规律，需要找到一中不可分割的结构，保证这种结构在之前的递归答案中不会出现。
+
+### [剑指 Offer II 113. 课程顺序](https://leetcode.cn/problems/QA2IGt/)
+
+看了题解之后才会做
+
+新的知识点--在遍历搜索中，如果图可能成环：vis数组设置为三种不同的搜索状态——未搜索、在搜索和已搜索。
+
+### [808. 分汤](https://leetcode.cn/problems/soup-servings/)
+
+[error: call to implicitly-deleted default constructor of ‘unordered_map＜pair＜int, int＞, int＞‘ m；_Zhihao杨的博客-CSDN博客](https://blog.csdn.net/weixin_42989041/article/details/113183015)
+
+[C++STL—pair＜int,int＞与unordered_map的结合使用_shadow_lr的博客-CSDN博客](https://blog.csdn.net/lr_shadow/article/details/115864228)
+
+
+
+
+
 
 
 ## 链表
